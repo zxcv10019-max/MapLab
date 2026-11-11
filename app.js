@@ -75,6 +75,19 @@ function setStatus(message, state = "info") {
   element.textContent = message;
   element.dataset.state = state;
 }
+async function fetchJsonFirst(paths, label) {
+  const errors = [];
+  for (const path of paths) {
+    try {
+      const response = await fetch(path);
+      if (!response.ok) throw new Error(`HTTP ${response.status}`);
+      return await response.json();
+    } catch (error) {
+      errors.push(`${path}: ${error.message}`);
+    }
+  }
+  throw new Error(`${label}读取失败（${errors.join("；")}）`);
+}
 function areaKm2(geometry) {
   const ringArea = (ring) => {
     let sum = 0;
@@ -275,10 +288,7 @@ function initCities() {
 async function loadData() {
   setStatus("正在读取统计数据…", "loading");
   try {
-    app.raw = window.MAPLAB_DATA || await fetch("assets/data.json").then((response) => {
-      if (!response.ok) throw new Error(`统计数据请求失败 (${response.status})`);
-      return response.json();
-    });
+    app.raw = window.MAPLAB_DATA || await fetchJsonFirst(["assets/data.json", "data.json"], "统计数据");
   } catch (error) {
     setStatus(`统计数据加载失败：${error.message}`, "error");
     return;
@@ -292,10 +302,7 @@ async function loadData() {
     if (window.MAPLAB_GEOJSON) geo = window.MAPLAB_GEOJSON;
     else {
       try {
-        geo = await fetch("assets/china.json").then((response) => {
-          if (!response.ok) throw new Error(`本地边界文件请求失败 (${response.status})`);
-          return response.json();
-        });
+        geo = await fetchJsonFirst(["assets/china.json", "china.json"], "本地省界数据");
       } catch {
         geo = await fetch(app.raw.boundaries.sourceUrl).then((response) => {
           if (!response.ok) throw new Error(`在线边界数据请求失败 (${response.status})`);
