@@ -1,0 +1,326 @@
+{
+  "schemaVersion": "1.1",
+  "year": 2024,
+  "geography": "中国大陆31个省级行政区，不含港澳台",
+  "metrics": {
+    "gdp": {
+      "label": "地区生产总值",
+      "unit": "亿元",
+      "sourceName": "聚汇数据汇总各省市统计局公布值",
+      "sourceUrl": "https://gdp.gotohui.com/topic-4615",
+      "methodology": "各省发布的2024年地区生产总值，汇总值；未逐项与国家统计局最终核实数据复核。",
+      "verificationStatus": "待逐省与官方统计公报/年鉴复核；当前为省级公开值汇总"
+    },
+    "population": {
+      "label": "年末常住人口",
+      "unit": "万人",
+      "sourceName": "聚汇数据汇总各省市统计局公布值",
+      "sourceUrl": "https://population.gotohui.com/topic-4861",
+      "methodology": "2024年末常住人口；统计调查按国家统计局人口变动抽样调查推算，省级表值为公开汇总数据。",
+      "verificationStatus": "来源汇总值；应按省级统计公报核对年末时点及修订"
+    },
+    "urban": {
+      "label": "城镇化率",
+      "unit": "%",
+      "sourceName": "区域经济资料表",
+      "sourceUrl": "https://lecondata.com/ML18/Sheet7_2024%E5%B9%B4%E5%9F%8E%E9%95%87%E5%8C%96%E7%8E%87.html",
+      "methodology": "公开汇总值；统计口径应以各省统计公报为准，本原型未逐省复核。",
+      "verificationStatus": "待逐省与官方统计公报复核"
+    },
+    "density": {
+      "label": "人口密度",
+      "unit": "人/km²",
+      "sourceName": "本软件基于GeoJSON几何面积推算",
+      "sourceUrl": "https://geo.datav.aliyun.com/areas_v3/bound/100000_full.json",
+      "methodology": "年末人口（万人）×10,000÷多边形球面面积（km²）；几何面积为估算，非官方公布人口密度。",
+      "verificationStatus": "本软件依据人口和简化边界几何推算，非官方发布指标"
+    }
+  },
+  "boundaries": {
+    "sourceName": "阿里云 DataV 行政区划 GeoJSON",
+    "sourceUrl": "https://raw.githubusercontent.com/NetworkSecurityVision/geojson-china/master/data/100000_full.json",
+    "idField": "adcode",
+    "notes": "GitHub raw mirror of DataV GeoAtlas GeoJSON; CORS-enabled endpoint for direct file:// pages. Boundary geometry requires internet access."
+  },
+  "regions": [
+    {
+      "adcode": "440000",
+      "name": "广东",
+      "values": {
+        "gdp": 141633.81,
+        "population": 12780.0,
+        "urban": 75.91
+      }
+    },
+    {
+      "adcode": "320000",
+      "name": "江苏",
+      "values": {
+        "gdp": 137008.0,
+        "population": 8526.0,
+        "urban": 75.5
+      }
+    },
+    {
+      "adcode": "370000",
+      "name": "山东",
+      "values": {
+        "gdp": 98566.0,
+        "population": 10080.0,
+        "urban": 66.48
+      }
+    },
+    {
+      "adcode": "330000",
+      "name": "浙江",
+      "values": {
+        "gdp": 90100.0,
+        "population": 6670.0,
+        "urban": 75.5
+      }
+    },
+    {
+      "adcode": "510000",
+      "name": "四川",
+      "values": {
+        "gdp": 64697.0,
+        "population": 8364.0,
+        "urban": 60.1
+      }
+    },
+    {
+      "adcode": "410000",
+      "name": "河南",
+      "values": {
+        "gdp": 63589.99,
+        "population": 9785.0,
+        "urban": 59.22
+      }
+    },
+    {
+      "adcode": "420000",
+      "name": "湖北",
+      "values": {
+        "gdp": 60012.97,
+        "population": 5834.0,
+        "urban": 66.35
+      }
+    },
+    {
+      "adcode": "350000",
+      "name": "福建",
+      "values": {
+        "gdp": 57761.02,
+        "population": 4193.0,
+        "urban": 71.81
+      }
+    },
+    {
+      "adcode": "310000",
+      "name": "上海",
+      "values": {
+        "gdp": 53926.71,
+        "population": 2480.0,
+        "urban": 89.85
+      }
+    },
+    {
+      "adcode": "430000",
+      "name": "湖南",
+      "values": {
+        "gdp": 53230.99,
+        "population": 6539.0,
+        "urban": 62.07
+      }
+    },
+    {
+      "adcode": "340000",
+      "name": "安徽",
+      "values": {
+        "gdp": 50625.0,
+        "population": 6123.0,
+        "urban": 62.57
+      }
+    },
+    {
+      "adcode": "110000",
+      "name": "北京",
+      "values": {
+        "gdp": 49843.1,
+        "population": 2183.0,
+        "urban": 88.23
+      }
+    },
+    {
+      "adcode": "130000",
+      "name": "河北",
+      "values": {
+        "gdp": 47526.9,
+        "population": 7378.0,
+        "urban": 63.42
+      }
+    },
+    {
+      "adcode": "610000",
+      "name": "陕西",
+      "values": {
+        "gdp": 35538.77,
+        "population": 3953.0,
+        "urban": 66.15
+      }
+    },
+    {
+      "adcode": "360000",
+      "name": "江西",
+      "values": {
+        "gdp": 34202.47,
+        "population": 4502.0,
+        "urban": 63.77
+      }
+    },
+    {
+      "adcode": "210000",
+      "name": "辽宁",
+      "values": {
+        "gdp": 32612.7,
+        "population": 4155.0,
+        "urban": 74.18
+      }
+    },
+    {
+      "adcode": "500000",
+      "name": "重庆",
+      "values": {
+        "gdp": 32193.15,
+        "population": 3190.0,
+        "urban": 72.15
+      }
+    },
+    {
+      "adcode": "530000",
+      "name": "云南",
+      "values": {
+        "gdp": 31534.1,
+        "population": 4655.0,
+        "urban": 54.11
+      }
+    },
+    {
+      "adcode": "450000",
+      "name": "广西",
+      "values": {
+        "gdp": 28649.4,
+        "population": 5013.0,
+        "urban": 57.39
+      }
+    },
+    {
+      "adcode": "150000",
+      "name": "内蒙古",
+      "values": {
+        "gdp": 26314.6,
+        "population": 2388.0,
+        "urban": 70.73
+      }
+    },
+    {
+      "adcode": "140000",
+      "name": "山西",
+      "values": {
+        "gdp": 25494.69,
+        "population": 3446.0,
+        "urban": 66.32
+      }
+    },
+    {
+      "adcode": "520000",
+      "name": "贵州",
+      "values": {
+        "gdp": 22667.12,
+        "population": 3860.0,
+        "urban": 56.66
+      }
+    },
+    {
+      "adcode": "650000",
+      "name": "新疆",
+      "values": {
+        "gdp": 20534.08,
+        "population": 2623.0,
+        "urban": 60.35
+      }
+    },
+    {
+      "adcode": "120000",
+      "name": "天津",
+      "values": {
+        "gdp": 18024.32,
+        "population": 1364.0,
+        "urban": 86.0
+      }
+    },
+    {
+      "adcode": "230000",
+      "name": "黑龙江",
+      "values": {
+        "gdp": 16476.9,
+        "population": 3029.0,
+        "urban": 68.04
+      }
+    },
+    {
+      "adcode": "220000",
+      "name": "吉林",
+      "values": {
+        "gdp": 14361.22,
+        "population": 2317.0,
+        "urban": 65.77
+      }
+    },
+    {
+      "adcode": "620000",
+      "name": "甘肃",
+      "values": {
+        "gdp": 13002.9,
+        "population": 2458.0,
+        "urban": 56.84
+      }
+    },
+    {
+      "adcode": "460000",
+      "name": "海南",
+      "values": {
+        "gdp": 7935.69,
+        "population": 1048.0,
+        "urban": 63.08
+      }
+    },
+    {
+      "adcode": "640000",
+      "name": "宁夏",
+      "values": {
+        "gdp": 5502.76,
+        "population": 729.0,
+        "urban": 68.18
+      }
+    },
+    {
+      "adcode": "630000",
+      "name": "青海",
+      "values": {
+        "gdp": 3950.8,
+        "population": 593.0,
+        "urban": 63.91
+      }
+    },
+    {
+      "adcode": "540000",
+      "name": "西藏",
+      "values": {
+        "gdp": 2764.94,
+        "population": 370.0,
+        "urban": 39.73
+      }
+    }
+  ]
+}
