@@ -29,7 +29,7 @@ function metricMeta(key = app.metric) {
   return app.raw.metrics[key] || { label: key, unit: "", sourceName: "来源未提供", sourceUrl: "", methodology: "" };
 }
 function metricValue(region, key = app.metric) {
-  if (key === "density") return region.derivedDensity ?? null;
+  if (key === "density") return region.values?.density ?? region.derivedDensity ?? null;
   return region.values?.[key] ?? null;
 }
 function formatNumber(value, key = app.metric) {
@@ -317,7 +317,7 @@ async function loadData() {
   app.rawGeo = geo;
   geo.features.forEach((feature) => {
     const region = app.byCode.get(codeOf(feature.properties));
-    if (region && Number.isFinite(region.values.population)) {
+    if (region && !Number.isFinite(region.values.density) && Number.isFinite(region.values.population)) {
       const area = areaKm2(feature.geometry);
       if (area > 0) region.derivedDensity = region.values.population * 10000 / area;
     }
